@@ -23,5 +23,5 @@ print(h_list)
 print(str(h_list[1]) + " <-- Esto demuestra que los arreglos de numpy también arrancan desde 0.")
 
 
-
+print(h)
 
