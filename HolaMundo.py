@@ -18,4 +18,10 @@ h = g
 
 h_list = np.array(h)
 
-print(h_list.array)
+print(h_list)
+
+print(str(h_list[1]) + " <-- Esto demuestra que los arreglos de numpy también arrancan desde 0.")
+
+
+
+
