@@ -28,8 +28,6 @@ print(h)
 print("Probando cambiar algo en la notebook")
 
 
- """
-
 print("triplets")
 g = [6,-7,8,-9,1,2,-3,4,7,-3]
 h = np.array(g)
@@ -55,4 +53,20 @@ for i in range(0, len(g)-2):
 print("")
 print("Sirven " + str(TS) + " triplets, y los " + str(TNS) + " no sirven.") 
 
+""" 
 
+myString = "Hola Mundo"
+
+# print(myString[desde:hasta:paso]) <- Entonces si lo dejo en blanco y completo el paso toma desde el inicio, hasta el final, y si el paso es negativo lo hace desde el final
+# si lo hace en positivo va saltando la cantidad especificada. Y dependiendo el inicio/fin que se ponga permite hacer subselecciones del string
+print(myString[0])
+print(myString[-2])
+print(myString[3:])
+print(myString[:3])
+print(myString[3:6])
+print(myString[::3])
+print(myString[::-1])
+
+print("tinker"[1:4])
+
+ 
