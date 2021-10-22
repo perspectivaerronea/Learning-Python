@@ -53,7 +53,7 @@ for i in range(0, len(g)-2):
 print("")
 print("Sirven " + str(TS) + " triplets, y los " + str(TNS) + " no sirven.") 
 
-""" 
+
 
 myString = "Hola Mundo"
 
@@ -69,4 +69,90 @@ print(myString[::-1])
 
 print("tinker"[1:4])
 
+ """ 
+
+lista = [3,1,-5,123,-23]
+
+print(lista)
+print(len(lista))
+
+lista.sort()
+lista.append(1233)
+print(lista)
+print(lista.pop())
+print(lista.pop(1))
+print(lista)
+print(lista[1:])
+print(lista[::2])
+
  
+#Tambien vi dictionary a= {'a':1,'b':[4,'d',-5]}
+
+a= {'a':1,'b':[4,'d',-5]}
+print(a)
+print(a['b'])
+print(a['b'][2])
+a['b'][2] = 'CAMBIADO'
+print(a['b'][2])
+#Y ví tuplets
+
+b = (1,3,4,5)
+print(b)
+print(b[3])
+# b[3] = 'c' <-- los tuplets son invariables
+
+#SETS
+#solo acepta valores únicos
+
+miset = set()
+miset.add(1)
+print(miset)
+miset.add(2)
+print(miset)
+miset.add(2)
+print(miset)
+
+lista_set = [1,1,2,3,4,4,3,3,2,2,6,6]
+
+miset = set(lista_set)
+print(miset)
+miset = set('Mississippi')
+print(miset)
+
+#archivos
+
+myfile = open('myfile.txt')
+# myfile = open('myfile2.txt') <-- arroja ErrNo 2 <- no existe ese archivo
+
+print(myfile.read())
+print("--")
+print(myfile.read())
+myfile.seek(0)
+print(myfile.read())
+print("--")
+myfile.seek(0)
+print(myfile.readline())
+print(myfile.readline())
+print(myfile.readline())
+print("--")
+myfile.seek(0)
+print(myfile.readlines())
+myfile.seek(0)
+myfile.close()
+print("--")
+print("--")
+
+with open("myfile.txt",mode='r') as f:
+    print(f.read())
+
+with open("myfile.txt",mode='a') as f:
+    f.write("\nNUEVA LINEA")
+
+with open("myfile.txt", mode='r') as f:
+    print(f.read())
+
+with open("archivo2.txt", mode='w') as f:
+    f.write("archivo creado desde Python")
+
+with open('archivo2.txt', mode='r') as f:
+    print(f.read())
