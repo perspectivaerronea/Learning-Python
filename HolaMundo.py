@@ -69,7 +69,7 @@ print(myString[::-1])
 
 print("tinker"[1:4])
 
- """ 
+  
 
 lista = [3,1,-5,123,-23]
 
@@ -156,3 +156,125 @@ with open("archivo2.txt", mode='w') as f:
 
 with open('archivo2.txt', mode='r') as f:
     print(f.read())
+
+  
+
+## FOR
+
+myList = [1,2,3,4,5,6,7,8,9,10]
+par = 0
+impar = 0
+total = 0
+for num in myList:
+    print(f'{total+num} = {total} + {num}')
+    total += num    
+    #diferencia pares de impares
+    if total%2 == 0:
+        print(f'{total} es par.')
+        par+=1
+    else:
+        print(f'{total} es impar.')
+        impar+=1
+
+print(f"Hay {par} pares y {impar} impares.")
+
+#Si uso _ (guión bajo) determino que el bucle no va a trabar con el elemento con el cual estoy iterando, no sé porque pero es una posibilidad
+
+for _ in 'Hello World':
+    print("Buuuu!!! No dependo de nadie")
+
+#Mix de Lista y Tuple - Es más común de lo que se cree y Python se aprovecha de esta posibilidad
+myList = [(1,2),(3,4),(5,6), (7,8), (9,10)]
+
+for item in myList:
+    print(item)
+    for tup in item:
+        print(tup)
+
+# TUPLE & PACKING
+# Al replicar la estructura interna de la lista, los tuples, obteno los mismos por separado sin necesidad de hacer dos FOR
+for (a,b) in myList:
+    print(a)
+    print(b)
+    print(a*b)
+
+myList = [(1,2,3), (4,5,6), (7,8,9)]    
+for a,b,c in myList:
+    print(b)
+
+#DICCIONARIOS
+d = {'k1':1, 'k2':2, 'k3':3, 'k4':4}
+for item in d:
+    print(item)
+
+#Como vimos el diccionario, por defecto, trae las claves que creamos, más NO sus valores, pero con la propiedad ".items()" podemos obtener los tuples
+for item in d.items():
+    print(item)
+#Ahora que sabemos que con esta combinación obtenemos los tuples podemos usar la técnica de tuple & packaging
+for (k,v) in d.items():
+    print(f'La clave {k} contiene el valor {v}.')
+
+#Pero si no nos interesan las claves del diccionario y solo queremos los valores podemos usar la propiedad ".values()"
+for v in d.values():
+    print(f'Valor: {v}')
+
+# BREAK, CONTINUE , PASS
+# BREAK - Corta el bucle más cercano - ESCAPE BOTTOM
+
+for v in d.values():
+    if v % 2 == 0:
+        break
+    else:
+        print(v)
+
+# CONTINUE - Vuelve al comienzo del bucle más cercano pasando al siguiente ciclo, funciona como un ESCAPE TOP
+for v in d.values():
+    if v == 3:
+        continue
+    else:
+        print(v)
+
+# PASS - Placeholder para que el compilador no tire error.
+
+# for v in d.values():
+    #Comentario
+# El coódigo anterior daria error porque al depender de la indentación Python espera encontrar código indentado para determinar el contenido, y por ende, el final del loop
+# pero si tenemos un for para usar a futuro, se resuelve con PASS
+
+for v in d.values():
+    pass
+print("Pasó el bucle sin problemas")
+
+### WHILE
+x = 0
+while x < 5:
+    print(x)
+    x+=1
+else:
+    print("es 5") 
+  """  
+#RANDOM
+
+mylist = [1,2,3,4,5]
+from random import  shuffle 
+shuffle(mylist)
+print(mylist)
+shuffle(mylist)
+print(mylist)
+
+#Write an equation that uses multiplication, division, an exponent, addition, and subtraction that is equal to 100.25.
+#Hint: This is just to test your memory of the basic arithmetic commands, work backwards from 100.25
+
+num = (2*5)**(6/(6-3))+0.25
+print(num)
+
+#Use for, .split(), and if to create a Statement that will print out words that start with 's':
+
+st = 'Sam Print only the words that start with s in this sentence'
+
+for l in st.split():
+    if l[0].lower() == 's':
+        print(l)
+
+lista = [w for w in st.split() if w[0] == 's']
+print(lista)
