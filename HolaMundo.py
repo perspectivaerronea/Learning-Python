@@ -278,3 +278,6 @@ for l in st.split():
 
 lista = [w for w in st.split() if w[0] == 's']
 print(lista)
+
+lista.insert(0,1)
+print(lista)
